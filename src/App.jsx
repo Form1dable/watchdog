@@ -1,6 +1,4 @@
-import React, {useState, useEffect, isValidElement} from 'react'
 import {Routes, Route, Link} from "react-router-dom"
-import {useIdleTimer} from "react-idle-timer";
 
 // Styles
 import "./styles/main.scss"
@@ -8,9 +6,10 @@ import "./styles/main.scss"
 
 // Components
 import Telemetry from "./components/telemetry/Telemetry"
+import Navbar from "./components/ui/Navbar";
 
 // UI Elements
-import Trigger from "./components/ui/Trigger"
+import Trigger from "./components/telemetry/Trigger"
 
 // Pages
 import Home from "./pages/Home"
@@ -21,15 +20,17 @@ export default function App() {
 
 
     return (
-        <main className="container">
+        <main className="container" style={{height: "300vh"}}>
             {/* Trigger in Portal */}
             <Trigger/>
             {/*Telemetry in Portal */}
-            <Link to="/">Home</Link>
-            <Link to="/about">About</Link>
             <Telemetry/>
+
+            {/* Navbar */}
+            <Navbar/>
+
             <Routes>
-                <Route path="/" element={<Home/>}/>
+                <Route path="/home" element={<Home/>}/>
                 <Route path="/about" element={<About/>}/>
             </Routes>
         </main>

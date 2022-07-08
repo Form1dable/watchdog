@@ -3,8 +3,7 @@ import React, {useEffect} from "react";
 import {
     Container,
     TelemetryContainer,
-    Title,
-    HorizontalLine,
+    TelemetryContainerSection
 } from "./TelemetryStyles";
 
 
@@ -16,6 +15,14 @@ import PageTelemetry from "./interface/PageTelemetry";
 import EventTelemetry from "./interface/EventTelemetry";
 import SessionTelemetry from "./interface/SessionTelemetry";
 
+// ======== Layout =======
+// Container
+// TelemetryContainerSection
+// TelemetryContainer
+// List
+// ListItem
+// Value
+// Property
 
 const Telemetry = () => {
 
@@ -26,21 +33,16 @@ const Telemetry = () => {
 
     return ReactDOM.createPortal(
         <Container>
-            <Title>Telemetry</Title>
-
-            <TelemetryContainer>
+            <TelemetryContainerSection>
                 <GeneralTelemetry/>
-                <HorizontalLine/>
-
-
                 <SessionTelemetry/>
-                <HorizontalLine/>
-
+            </TelemetryContainerSection>
+            <TelemetryContainerSection>
                 <PageTelemetry/>
-                <HorizontalLine/>
-
+            </TelemetryContainerSection>
+            <TelemetryContainerSection>
                 <EventTelemetry/>
-            </TelemetryContainer>
+            </TelemetryContainerSection>
 
         </Container>, document.getElementById("telemetry")
     )

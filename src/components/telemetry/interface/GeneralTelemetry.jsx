@@ -8,7 +8,7 @@ import TelemetryMetric from "../TelemetryMetric";
 import {browserName, browserVersion, osName, osVersion, engineName} from "react-device-detect";
 
 // Styles
-import {TelemetryListContainer, List, Subtitle} from "../TelemetryStyles";
+import {TelemetryContainer, List, Subtitle} from "../TelemetryStyles";
 
 
 export default function GeneralTelemetry() {
@@ -37,7 +37,7 @@ export default function GeneralTelemetry() {
 
 
     return (
-        <TelemetryListContainer>
+        <TelemetryContainer>
             <Subtitle>General</Subtitle>
             <List>
                 <TelemetryMetric property="Browser" value={general.browser}/>
@@ -47,6 +47,6 @@ export default function GeneralTelemetry() {
                 <TelemetryMetric property="Longitude" value={general.longitude}/>
             </List>
 
-        </TelemetryListContainer>
+        </TelemetryContainer>
     )
 }

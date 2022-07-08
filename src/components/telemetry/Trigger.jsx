@@ -1,5 +1,5 @@
 import ReactDOM from "react-dom";
-import React, {useEffect} from "react"
+import React from "react"
 import styled from "styled-components"
 import usePointerCordinates from "../../hooks/usePointerCordinates";
 
@@ -26,6 +26,10 @@ const Coordinates = styled.div`
   margin-top: 0.5rem;
   margin-left: 0.5rem;
   user-select: none;
+  background: rgba(0, 0, 0, 0.8);
+  font-size: 0.8rem;
+  padding: 1rem;
+  color: #FAFAFA;
 `
 
 const Trigger = React.memo(() => {

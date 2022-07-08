@@ -2,38 +2,33 @@
 
 ### Description
 ---
-This website is created to demonstrate how much can a website track a users action and visualize the data collection
+Event and Session data
 
 ## General Data
 
-1. Identify IP
-2. Identify location
-3. Identify Device
-4. Identify CPU
-5. Identify OS
-6. Identify Browser
-7. Identify Peripherals connected
+1. [*] Identify location
+2. [*] Identify Device
+3. [*] Identify Browser Engine
+4. [*] Identify Browser
+5. [*] Identify OS
 
 ## UI Events
 ---
 
-1. Track position of the mouse cursor
-2. Determine velocity of the mouse cursor
-3. Track hover events
-4. Track duration of hover
-5. Track mouseover
-6. Track mouseout
-7. Track number of clicks
-8. Track scroll size
-9. Track scroll speed
-10. Track focus event
-11. Track duration of focus
-12. Track keyboard inputs
+1. [*] Track position of the mouse cursor
+2. [ ] Determine velocity of the mouse cursor
+4. [ ] Track duration of hover
+5. [ ] Track mouseover
+7. [*] Track number of clicks
+8. [*] Track scroll size
+9. [ ] Track scroll speed
+10. [ ] Track focus event
+11. [ ] Track duration of focus
+12. [* ] Track & Collect keyboard inputs
 
-## Navigation
+## Navbar
 ---
 
-1. Track duration of a page
-2. Track browsing history
-3. Track Reload
-4. Track Cookies
+1. [*] Track duration of a page
+2. [*] Track navigation history
+3. [ ] Collect Cookies

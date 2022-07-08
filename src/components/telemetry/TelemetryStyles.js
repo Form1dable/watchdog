@@ -1,40 +1,40 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  background: rgba(0, 0, 0, 0.8);
-  padding: 2rem;
-  min-width: 360px;
   position: fixed;
   top: 1rem;
   right: 1rem;
-  border-radius: 15px;
-  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
   z-index: 100;
   color: #FAFAFA;
+  width: 100%;
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
 `
 
 export const TelemetryContainer = styled.div`
-  margin-top: 2rem;
+  background: rgba(0, 0, 0, 0.8);
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+  padding: 1rem 2rem;
+  margin: 0.4rem;
+  width: 100%;
+  border-radius: 10px;
 `
 
-export const TelemetryListContainer = styled.div`
-  margin: 1rem 0;
-`
 
-export const Title = styled.div`
-  font-weight: 700;
-  font-size: 2.6rem;
-  text-align: center;
+export const TelemetryContainerSection = styled.div`
+  display: flex;
 `
 
 export const Subtitle = styled.div`
   font-weight: 600;
   font-size: 1.3rem;
+  text-align: center;
 `
 
 export const List = styled.ul`
   list-style: none;
-  margin-top: 1rem;
+  margin-top: 0.8rem;
 `
 
 export const ListItem = styled.li`
@@ -60,6 +60,3 @@ export const HorizontalLine = styled.div`
   height: 1.5px;
   margin: 0.3rem 0;
 `
-
-
-

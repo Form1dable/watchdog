@@ -5,7 +5,7 @@ import {useIdleTimer} from "react-idle-timer";
 import TelemetryMetric from "../TelemetryMetric";
 
 // Styles
-import {TelemetryListContainer, List, Subtitle} from "../TelemetryStyles";
+import {TelemetryContainer, List, Subtitle} from "../TelemetryStyles";
 import {clear} from "@testing-library/user-event/dist/clear";
 
 
@@ -58,7 +58,7 @@ export default function SessionTelemetry() {
 
 
     return (
-        <TelemetryListContainer>
+        <TelemetryContainer>
             <Subtitle>Session Details</Subtitle>
             <List>
                 <TelemetryMetric property="Current Session" value={`${Math.floor(time.elapsed / 1000)} seconds`}/>
@@ -67,6 +67,6 @@ export default function SessionTelemetry() {
                 <TelemetryMetric property="Status" value={activeStatus ? "Active" : "Idle"}/>
             </List>
 
-        </TelemetryListContainer>
+        </TelemetryContainer>
     )
 }

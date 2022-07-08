@@ -6,7 +6,7 @@ import usePointerCordinates from "../../../hooks/usePointerCordinates";
 import TelemetryMetric from "../TelemetryMetric";
 
 // Styles
-import {TelemetryListContainer, List, Subtitle} from "../TelemetryStyles";
+import {TelemetryContainer, List, Subtitle} from "../TelemetryStyles";
 
 
 export default function EventTelemetry() {
@@ -14,6 +14,8 @@ export default function EventTelemetry() {
     const coordinates = usePointerCordinates()
 
     // States
+    const [scroll, setScroll] = useState(0)
+
     const [viewport, setViewport] = useState({
         browserWidth: window.innerWidth,
         browserHeight: window.innerHeight
@@ -24,6 +26,8 @@ export default function EventTelemetry() {
 
 
     // Effects
+
+    // Resize
     useEffect(() => {
         const handleResize = () => {
             setViewport({
@@ -39,6 +43,7 @@ export default function EventTelemetry() {
     }, [setViewport])
 
 
+    // Keyboard
     useEffect(() => {
         const handleKeydown = (event) => {
             setKeydownAmount(prevState => prevState + 1)
@@ -53,17 +58,31 @@ export default function EventTelemetry() {
     }, [])
 
 
+    // Scroll
+    useEffect(() => {
+        const handleScroll = (e) => {
+            const position = window.pageYOffset;
+            setScroll(position)
+        }
+        window.addEventListener("scroll", handleScroll)
+
+        return () => {
+            window.removeEventListener("scroll", handleScroll)
+        }
+    }, [])
+
+
     return (
-        <TelemetryListContainer>
+        <TelemetryContainer>
             <Subtitle>Events</Subtitle>
             <List>
                 <TelemetryMetric property="ClientX" value={`${coordinates.x} px`}/>
                 <TelemetryMetric property="ClientY" value={`${coordinates.y} px`}/>
+                <TelemetryMetric property="Scroll" value={`${scroll} px`}/>
+                <TelemetryMetric property="Keypress" value={keydownAmount}/>
                 <TelemetryMetric property="Browser Height" value={`${viewport.browserHeight} px`}/>
                 <TelemetryMetric property="Browser Width" value={`${viewport.browserWidth} px`}/>
-                <TelemetryMetric property="Keypress" value={keydownAmount}/>
             </List>
-
-        </TelemetryListContainer>
+        </TelemetryContainer>
     )
 }
